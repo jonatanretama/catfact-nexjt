@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -23,6 +24,19 @@
       "@/*": ["./*"]
     }
   },
+  "declaration": false,
+  "emitDecoratorMetadata": true,
+  "experimentalDecorators": true,
+  "importHelpers": true,
+  "skipDefaultLibCheck": true,
+  "strictNullChecks": false,
+  "baseUrl": ".",
+  "noImplicitOverride": true,
+  "noPropertyAccessFromIndexSignature": true,
+  "noImplicitReturns": true,
+  "noFallthroughCasesInSwitch": true,
+  "allowSyntheticDefaultImports": true,
+  "noImplicitAny": true,
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
