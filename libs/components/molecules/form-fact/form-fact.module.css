@@ -16,13 +16,15 @@
 .form-container {
   display: flex;
   flex-direction: row;
-  column-gap: 8rem;
+  column-gap: 6rem;
   margin-bottom: 4rem;
 }
 
 .form-container div {
   display: flex;
   flex-direction: column;
+  align-items: left;
+  justify-content: left;
   width: auto;
 }
 
@@ -30,19 +32,18 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 1rem;
+  margin-bottom: 4px;
 }
 
 .form-container input {
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 48px;
   font-size: 18px;
-  align-self: center;
   justify-content: center;
   text-align: center;
   background-color: #fee6e3;
   color: #000;
-  border: 1px solid #111;
+  border: 2px solid #111;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -69,7 +70,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-top: -25px;
+  margin-top: -35px;
 }
 
 .button-submit:after {

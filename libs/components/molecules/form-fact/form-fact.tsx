@@ -34,12 +34,12 @@ export const FormFact: FC = () => {
             />
           </div>
           <div>
-            <label htmlFor="maxLength">Characters per Fact</label>
+            <label htmlFor="maxLength">Characters</label>
             <input
               type="number"
               id="maxLength"
               name="maxLength"
-              placeholder="Characters per Fact"
+              placeholder="Characters"
               min={0}
               defaultValue={35}
             />
