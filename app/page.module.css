@@ -1,17 +1,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
   min-height: 100vh;
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,13 +1,9 @@
 import { catFactsInstace } from '@/libs/api/catfact-api';
 import { useState, useEffect } from 'react';
+import { TRandomFact } from '@types';
 
-type TFacts = {
-  fact: string;
-  length: number;
-};
-
-export const useGetFact = () => {
-  const [data, setData] = useState<TFacts[]>([]);
+export const useGetRandomFact = () => {
+  const [data, setData] = useState<TRandomFact[]>([]);
   const [error, setError] = useState<string | null | any>(null);
   const [loaded, setLoaded] = useState<boolean>(false);
 
@@ -16,7 +12,7 @@ export const useGetFact = () => {
       try {
         const res = await catFactsInstace.request({
           method: 'get',
-          url: '/facts',
+          url: '/fact',
           params: {
             max_length: 40,
             limit: 1,

@@ -1,6 +1,9 @@
 import type { AxiosResponse, AxiosError } from 'axios';
 
 export const CatFactInterceptor = {
+  // requestSuccess(config: AxiosRequestConfig) {
+  //   return { ...config, headers: { ...config.headers,  } };
+  // },
   responseSuccess({ data, ...rest }: AxiosResponse) {
     return { ...rest, data };
   },
