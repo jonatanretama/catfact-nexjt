@@ -10,17 +10,17 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  column-gap: 5rem;
-  max-height: 30vh;
+  column-gap: 3rem;
+  max-height: 20vh;
 }
 .form-container {
   display: flex;
   flex-direction: row;
-  column-gap: 6rem;
+  column-gap: 3rem;
   margin-bottom: 4rem;
 }
 
-.form-container div {
+.form-container > div {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -28,14 +28,14 @@
   width: auto;
 }
 
-.form-container div label {
+.form-container > div > label {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: 4px;
 }
 
-.form-container input {
+.form-container > div > input {
   width: 150px;
   height: 48px;
   font-size: 18px;
@@ -46,6 +46,15 @@
   border: 2px solid #111;
   border-radius: 8px;
   box-sizing: border-box;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -37px;
+  gap: 3rem;
 }
 
 .button-submit {
@@ -62,7 +71,7 @@
   height: 48px;
   justify-content: center;
   line-height: 24px;
-  max-width: 100%;
+  width: 155px;
   padding: 0 25px;
   position: relative;
   text-align: center;
@@ -70,7 +79,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-top: -35px;
 }
 
 .button-submit:after {
@@ -101,29 +109,44 @@
   outline: 0;
 }
 
-@media (max-width: 1024px) {
-  .form {
-    column-gap: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
   .form-container {
-    flex-direction: column;
-    row-gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
-  .form-container div label {
+  .form-container > div > label {
     font-size: 1rem;
   }
   .form {
     flex-direction: column;
+  }
+  .button-container {
+    margin-top: 0px;
+    gap: 2;
   }
 }
 
 @media (min-width: 768px) {
   .button-submit {
     padding: 0 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .button-submit {
+    height: 35px;
+    width: 155px;
+    margin-top: 0px;
+  }
+  .button-submit:after {
+    height: 35px;
+    width: 155px;
+  }
+  .form-container > div > input {
+    height: 35px;
+    width: 155px;
+  }
+  .button-container {
+    gap: 3rem;
   }
 }

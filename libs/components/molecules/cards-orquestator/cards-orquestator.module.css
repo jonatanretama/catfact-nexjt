@@ -11,13 +11,13 @@
   backdrop-filter: blur(5px);
   border-radius: 8px;
   overflow-x: auto;
-  max-height: 68vh;
+  max-height: 65vh;
   padding: 4rem;
 }
 
 @media (min-width: 720px) {
   .orquestator {
-    max-height: 75vh;
+    max-height: 68vh;
     width: 90%;
   }
 }

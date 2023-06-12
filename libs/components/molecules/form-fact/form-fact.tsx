@@ -1,20 +1,36 @@
-import { FC, useRef } from 'react';
-import { useGetFacts } from '@hooks';
+import { FC, useRef, useState } from 'react';
+import { useGetFacts, useGetRandomFact } from '@hooks';
 import { CardsOrquestator } from '../cards-orquestator';
 import styles from './form-fact.module.css';
+import { TFactResult } from '@/libs/types';
 
 export const FormFact: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [isFactsOrRandom, setIsFactsOrRandom] = useState<
+    'facts' | 'random' | string
+  >('');
 
   const { data, setParams } = useGetFacts();
+  const { data: dataRandom, setRandomParams } = useGetRandomFact();
 
   const onSubmit = (event: React.SyntheticEvent) => {
+    setIsFactsOrRandom('facts');
     event.preventDefault();
     const { maxLength, limit } = formRef.current as HTMLFormElement;
 
     setParams({
       maxLength: maxLength.value,
       limit: limit.value,
+    });
+  };
+
+  const onSubmitRandom = (event: React.SyntheticEvent) => {
+    setIsFactsOrRandom('random');
+    event.preventDefault();
+    const { maxLength } = formRef.current as HTMLFormElement;
+
+    setRandomParams({
+      maxLength: maxLength.value,
     });
   };
 
@@ -45,14 +61,30 @@ export const FormFact: FC = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          onClick={e => onSubmit(e)}
-          className={styles['button-submit']}>
-          Submit
-        </button>
+        <div className={styles['button-container']}>
+          <button
+            type="submit"
+            onClick={e => onSubmit(e)}
+            className={styles['button-submit']}>
+            List Facts
+          </button>
+          <button
+            type="submit"
+            onClick={e => onSubmitRandom(e)}
+            className={styles['button-submit']}>
+            Random Fact
+          </button>
+        </div>
       </form>
-      {data?.length > 0 && <CardsOrquestator data={data} />}
+      {['random', 'facts'].includes(isFactsOrRandom) && (
+        <CardsOrquestator
+          data={
+            ['random'].includes(isFactsOrRandom)
+              ? ([dataRandom] as TFactResult[])
+              : data
+          }
+        />
+      )}
     </section>
   );
 };

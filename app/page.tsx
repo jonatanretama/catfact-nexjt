@@ -14,6 +14,7 @@ export default function Home() {
           <li key={`fact-${index}`}>{item.fact}</li>
         ))}
       </ul> */}
+      <h1>Cat Fact</h1>
       <FactContainer />
     </main>
   );
