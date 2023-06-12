@@ -21,7 +21,19 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      // "@atoms/*": ["./libs/components/atoms/*"],
+      // "@atoms": ["./libs/components/atoms"],
+      "@molecules/*": ["./libs/components/molecules/*"],
+      "@molecules": ["./libs/components/molecules"],
+      "@organisms/*": ["./libs/components/organisms/*"],
+      "@organisms": ["./libs/components/organisms"],
+      "@types/*": ["./libs/types/*"],
+      "@types": ["./libs/types"],
+      "@api/*": ["./libs/api/*"],
+      "@api": ["./libs/api"],
+      "@hooks/*": ["./libs/hooks/*"],
+      "@hooks": ["./libs/hooks"]
     }
   },
   "declaration": false,
