@@ -49,6 +49,14 @@
   "noFallthroughCasesInSwitch": true,
   "allowSyntheticDefaultImports": true,
   "noImplicitAny": true,
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".storybook/**/*",
+    "**/*.stories.tsx",
+    "__tests__/**/*"
+  ],
+  "exclude": ["node_modules", ".next"]
 }
