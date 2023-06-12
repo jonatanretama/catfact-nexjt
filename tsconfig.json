@@ -23,17 +23,17 @@
     "paths": {
       "@/*": ["./*"],
       // "@atoms/*": ["./libs/components/atoms/*"],
-      // "@atoms": ["./libs/components/atoms"],
+      // "@atoms": ["./libs/components/atoms/index.ts"],
       "@molecules/*": ["./libs/components/molecules/*"],
-      "@molecules": ["./libs/components/molecules"],
+      "@molecules": ["./libs/components/molecules/index.ts"],
       "@organisms/*": ["./libs/components/organisms/*"],
-      "@organisms": ["./libs/components/organisms"],
+      "@organisms": ["./libs/components/organisms/index.ts"],
       "@types/*": ["./libs/types/*"],
-      "@types": ["./libs/types"],
+      "@types": ["./libs/types/index.ts"],
       "@api/*": ["./libs/api/*"],
-      "@api": ["./libs/api"],
+      "@api": ["./libs/api/index.ts"],
       "@hooks/*": ["./libs/hooks/*"],
-      "@hooks": ["./libs/hooks"]
+      "@hooks": ["./libs/hooks/index.ts"]
     }
   },
   "declaration": false,
@@ -58,5 +58,11 @@
     "**/*.stories.tsx",
     "__tests__/**/*"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "jest.setup.ts",
+    "jest.config.ts",
+    "jest.preset.ts"
+  ]
 }
